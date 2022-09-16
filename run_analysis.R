@@ -80,4 +80,4 @@ Tidy_data_all <-Tidy_data_all[order(Tidy_data_all$subject_id,Tidy_data_all$activ
 names(Tidy_data_all)[names(Tidy_data_all) == 'Group.2'] <- "activity_names"
 ## export the data to a csv file
 write.csv(Tidy_data_all[,2:82],"./data_all_tidy.csv",row.names = FALSE)
-
+write.table(Tidy_data_all[,2:82],"./data_all_tidy.txt",row.names = FALSE)
