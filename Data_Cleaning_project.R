@@ -77,7 +77,7 @@ names(data_all_mean_std)[names(data_all_mean_std) == 'activity_labels'] <- "acti
 ## for each activity and each subject
 Tidy_data_all <-aggregate(data_all_mean_std,by=list(data_all_mean_std$subject_id,data_all_mean_std$activity_names),mean)
 Tidy_data_all <-Tidy_data_all[order(Tidy_data_all$subject_id,Tidy_data_all$activity_names),]
-
+names(Tidy_data_all)[names(Tidy_data_all) == 'Group.2'] <- "activity_names"
 ## export the data to a csv file
-write.csv(Tidy_data_all[,1:82],"./data_all_tidy.csv")
+write.csv(Tidy_data_all[,2:82],"./data_all_tidy.csv",row.names = FALSE)
 
